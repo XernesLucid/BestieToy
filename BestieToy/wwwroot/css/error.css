@@ -1,0 +1,47 @@
+﻿
+.error-icon {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card {
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+details summary {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    transition: background-color 0.3s ease;
+}
+
+    details summary:hover {
+        background-color: #f8f9fa;
+    }
+
+details[open] summary {
+    margin-bottom: 1rem;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

@@ -1,0 +1,153 @@
+﻿@model BestieToy.ViewModels.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Lỗi";
+
+    // Thêm CSS riêng
+    ViewData["AdditionalCss"] = "error";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 text-center">
+            <!-- Error Icon -->
+            <div class="error-icon mb-4">
+                <i class="fas fa-exclamation-triangle fa-5x text-warning"></i>
+            </div>
+
+            <!-- Error Message -->
+            <h1 class="display-5 fw-bold mb-3">Đã xảy ra lỗi</h1>
+            <p class="lead text-muted mb-4">
+                Rất tiếc, đã xảy ra lỗi trong quá trình xử lý yêu cầu của bạn.
+                Đội ngũ kỹ thuật đã được thông báo và sẽ khắc phục sớm nhất.
+            </p>
+
+            <!-- Error Details -->
+            @if (Model.ShowRequestId)
+            {
+                <div class="alert alert-info" role="alert">
+                    <h5 class="alert-heading">Thông tin lỗi:</h5>
+                    <p class="mb-0">Mã lỗi: <code>@Model.RequestId</code></p>
+                    <hr>
+                    <p class="mb-0 small">
+                        Vui lòng cung cấp mã lỗi này khi liên hệ hỗ trợ kỹ thuật.
+                    </p>
+                </div>
+            }
+
+            <!-- Common Solutions -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Bạn có thể thử:</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-redo-alt text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Tải lại trang</h6>
+                                    <p class="small text-muted mb-0">Nhấn F5 hoặc nút tải lại trình duyệt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-home text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Về trang chủ</h6>
+                                    <p class="small text-muted mb-0">Quay lại và thử lại sau</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-history text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Xóa cache trình duyệt</h6>
+                                    <p class="small text-muted mb-0">Xóa cache và cookies của trình duyệt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-user-cog text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Liên hệ hỗ trợ</h6>
+                                    <p class="small text-muted mb-0">Nếu lỗi vẫn tiếp diễn</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg">
+                    <i class="fas fa-home me-2"></i>Về trang chủ
+                </a>
+
+                <button onclick="window.location.reload()" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-redo-alt me-2"></i>Tải lại trang
+                </button>
+
+                <a href="mailto:support@bestietoy.com?subject=Lỗi hệ thống - Mã: @Model.RequestId"
+                   class="btn btn-outline-secondary btn-lg">
+                    <i class="fas fa-headset me-2"></i>Báo lỗi
+                </a>
+            </div>
+
+            <!-- Technical Info -->
+            <div class="mt-5">
+                <details class="text-start">
+                    <summary class="text-muted cursor-pointer">
+                        <i class="fas fa-code me-2"></i>Thông tin kỹ thuật (dành cho nhà phát triển)
+                    </summary>
+                    <div class="mt-3 p-3 bg-dark text-white rounded">
+                        <pre class="mb-0 small">@{
+                            // In production, you might want to limit this information
+                            if (Model.ShowRequestId)
+                            {
+                                    WriteLiteral($"Request ID: {Model.RequestId}\n");
+                                    WriteLiteral($"Timestamp: {DateTime.Now:yyyy-MM-dd HH:mm:ss}\n");
+                                    WriteLiteral($"User Agent: {Context.Request.Headers["User-Agent"]}");
+                            }
+                            else
+                            {
+                                    WriteLiteral("No additional information available.");
+                            }
+                                                }
+</pre>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        // Auto refresh after 30 seconds
+        setTimeout(function() {
+            window.location.reload();
+        }, 30000);
+
+        // Copy error code to clipboard
+        $('.alert-info').on('click', function() {
+            var errorCode = $(this).find('code').text();
+
+            navigator.clipboard.writeText(errorCode).then(function() {
+                showToast('Đã sao chép mã lỗi vào clipboard', 'success');
+            });
+        });
+    </script>
+}

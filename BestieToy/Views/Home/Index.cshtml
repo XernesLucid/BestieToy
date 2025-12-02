@@ -1,0 +1,327 @@
+﻿@model BestieToy.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = "BestieToy - Đồ chơi thú cưng chất lượng cao";
+    ViewData["Description"] = "Chuyên cung cấp đồ chơi, thức ăn và phụ kiện cao cấp cho thú cưng. Mang lại niềm vui và sức khỏe cho những người bạn bốn chân.";
+}
+
+<!-- Hero Section -->
+<section class="hero-section py-5 mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h1 class="display-4 fw-bold mb-4">
+                    Niềm vui cho <span class="text-primary">thú cưng</span>,
+                    Hạnh phúc cho <span class="text-secondary">bạn</span>
+                </h1>
+                <p class="lead mb-4">
+                    Khám phá bộ sưu tập đồ chơi, thức ăn và phụ kiện chất lượng cao
+                    dành riêng cho chó và mèo. Sản phẩm an toàn, bền đẹp, được thiết kế
+                    để mang lại trải nghiệm tốt nhất cho thú cưng của bạn.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a asp-controller="Product" asp-action="ByPetType" asp-route-petType="Dog"
+                       class="btn btn-primary btn-lg px-4">
+                        <i class="fas fa-dog me-2"></i>Đồ cho Chó
+                    </a>
+                    <a asp-controller="Product" asp-action="ByPetType" asp-route-petType="Cat"
+                       class="btn btn-secondary btn-lg px-4">
+                        <i class="fas fa-cat me-2"></i>Đồ cho Mèo
+                    </a>
+                    <a asp-controller="Product" asp-action="Index"
+                       class="btn btn-outline-primary btn-lg px-4">
+                        Xem tất cả
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Thú cưng vui vẻ"
+                         class="img-fluid rounded-lg shadow-lg">
+                    <div class="position-absolute bottom-0 start-0 bg-primary text-white p-3 rounded-end">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-shield-alt fa-2x me-3"></i>
+                            <div>
+                                <h5 class="mb-0">100% An toàn</h5>
+                                <small>Chất liệu thân thiện</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section class="categories-section py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Danh mục nổi bật</h2>
+            <p class="text-muted">Lựa chọn theo nhu cầu của thú cưng</p>
+        </div>
+
+        <div class="row g-4">
+            @foreach (var category in Model.Categories.Take(4))
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center p-4 bg-white rounded-lg shadow-sm h-100">
+                        <div class="category-icon mb-3">
+                            <div class="icon-wrapper">
+                                @if (category.PetType == "Dog")
+                                {
+                                    <i class="fas fa-dog fa-2x text-primary"></i>
+                                }
+                                else
+                                {
+                                    <i class="fas fa-cat fa-2x text-secondary"></i>
+                                }
+                            </div>
+                        </div>
+                        <h5 class="mb-2">@category.CategoryName</h5>
+                        <p class="text-muted small mb-3">@(category.Description?.Length > 60 ? category.Description.Substring(0, 60) + "..." : category.Description)</p>
+                        <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@category.CategoryId"
+                           class="btn btn-outline-primary btn-sm">
+                            Xem sản phẩm <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section class="featured-products py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="section-title">Sản phẩm nổi bật</h2>
+                <p class="text-muted">Những sản phẩm được yêu thích nhất</p>
+            </div>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-primary">
+                Xem tất cả <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+        @if (Model.FeaturedProducts.Any())
+        {
+            <div class="product-grid">
+                @foreach (var product in Model.FeaturedProducts)
+                {
+                    <partial name="_ProductCard" model="product" />
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-box-open fa-3x text-muted mb-3"></i>
+                <h4>Chưa có sản phẩm nổi bật</h4>
+                <p class="text-muted">Hãy quay lại sau nhé!</p>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- New Arrivals -->
+<section class="new-arrivals py-5 bg-light">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="section-title">Sản phẩm mới</h2>
+                <p class="text-muted">Những sản phẩm vừa được thêm</p>
+            </div>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-primary">
+                Xem tất cả <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+
+        @if (Model.NewestProducts.Any())
+        {
+            <div class="product-grid">
+                @foreach (var product in Model.NewestProducts)
+                {
+                    <partial name="_ProductCard" model="product" />
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-gift fa-3x text-muted mb-3"></i>
+                <h4>Chưa có sản phẩm mới</h4>
+                <p class="text-muted">Hãy quay lại sau nhé!</p>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Tại sao chọn BestieToy?</h2>
+            <p class="text-muted">Những lý do bạn nên tin tưởng chúng tôi</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                    </div>
+                    <h5>Chất lượng cao</h5>
+                    <p class="text-muted small">Sản phẩm được kiểm định chất lượng, an toàn cho thú cưng</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-shipping-fast fa-2x text-primary"></i>
+                    </div>
+                    <h5>Giao hàng nhanh</h5>
+                    <p class="text-muted small">Giao hàng toàn quốc trong 2-4 ngày làm việc</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-headset fa-2x text-primary"></i>
+                    </div>
+                    <h5>Hỗ trợ 24/7</h5>
+                    <p class="text-muted small">Đội ngũ tư vấn luôn sẵn sàng hỗ trợ bạn</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-undo-alt fa-2x text-primary"></i>
+                    </div>
+                    <h5>Đổi trả dễ dàng</h5>
+                    <p class="text-muted small">Đổi trả trong 7 ngày nếu không hài lòng</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="mb-3">Đăng ký nhận tin</h2>
+                <p class="mb-0">Nhận thông tin khuyến mãi và sản phẩm mới từ BestieToy</p>
+            </div>
+            <div class="col-lg-6">
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" class="form-control form-control-lg"
+                               placeholder="Nhập email của bạn" required>
+                        <button class="btn btn-light btn-lg" type="submit">
+                            Đăng ký <i class="fas fa-paper-plane ms-2"></i>
+                        </button>
+                    </div>
+                    <small class="form-text mt-2 d-block">Chúng tôi cam kết không spam email của bạn</small>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #F7FFF7 0%, #FFFFFF 100%);
+    }
+
+    .section-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+    .category-card, .feature-card {
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+    }
+
+        .category-card:hover, .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #FF6B35, #4ECDC4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin: 0 auto;
+    }
+
+    .feature-icon i {
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover .feature-icon i {
+        transform: scale(1.2);
+    }
+
+    .newsletter-form .form-control {
+        border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+        border: none;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .newsletter-form .btn {
+        border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+        border: none;
+    }
+
+    .newsletter-form .form-text {
+        opacity: 0.8;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        // Newsletter form submission
+        $('.newsletter-form').on('submit', function(e) {
+            e.preventDefault();
+            var email = $(this).find('input[type="email"]').val();
+
+            if (email) {
+                // In real application, you would send this to your server
+                showToast('Cảm ơn bạn đã đăng ký nhận tin!', 'success');
+                $(this).find('input[type="email"]').val('');
+            }
+        });
+
+        // Update cart badge from session
+        $(document).ready(function() {
+            updateCartBadge();
+        });
+    </script>
+}

@@ -1,0 +1,539 @@
+﻿@model BestieToy.ViewModels.ProductDetailViewModel
+
+@{
+    ViewData["Title"] = Model.Product.ProductName;
+    ViewData["Description"] = Model.Product.Description;
+}
+
+<!-- Breadcrumb -->
+<div class="container py-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Product" asp-action="Index">Sản phẩm</a></li>
+            @if (Model.Category != null)
+            {
+                <li class="breadcrumb-item">
+                    <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@Model.Category.CategoryId">
+                        @Model.Category.CategoryName
+                    </a>
+                </li>
+            }
+            <li class="breadcrumb-item active">@Model.Product.ProductName</li>
+        </ol>
+    </nav>
+</div>
+
+<!-- Product Detail -->
+<div class="container py-4">
+    <div class="row">
+        <!-- Product Images -->
+        <div class="col-lg-6 mb-4">
+            <div class="product-images">
+                <!-- Main Image -->
+                <div class="main-image mb-3">
+                    <img id="mainProductImage"
+                         src="@(Model.Product.ImageUrl ?? "/images/default-product.jpg")"
+                         alt="@Model.Product.ProductName"
+                         class="img-fluid rounded-lg shadow"
+                         data-zoom-image="@(Model.Product.ImageUrl ?? "/images/default-product.jpg")">
+                </div>
+
+                <!-- Thumbnails -->
+                <div class="thumbnails d-flex flex-wrap gap-2">
+                    <div class="thumbnail active" data-image="@(Model.Product.ImageUrl ?? "/images/default-product.jpg")">
+                        <img src="@(Model.Product.ImageUrl ?? "/images/default-product.jpg")"
+                             alt="@Model.Product.ProductName"
+                             class="img-thumbnail">
+                    </div>
+                    <!-- Additional thumbnails can be added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-lg-6 mb-4">
+            <div class="product-info">
+                <!-- Product Header -->
+                <div class="mb-4">
+                    <h1 class="h2 mb-2">@Model.Product.ProductName</h1>
+
+                    <!-- Rating -->
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="rating-stars me-2">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= Math.Floor(Model.AverageRating))
+                                {
+                                    <i class="fas fa-star text-warning"></i>
+                                }
+                                else if (i == Math.Ceiling(Model.AverageRating) && Model.AverageRating % 1 != 0)
+                                {
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                }
+                                else
+                                {
+                                    <i class="far fa-star text-warning"></i>
+                                }
+                            }
+                        </div>
+                        <span class="text-muted me-3">(@Model.ReviewCount đánh giá)</span>
+
+                        <!-- Stock Status -->
+                        @if (Model.Product.StockQuantity > 0)
+                        {
+                            <span class="badge bg-success">
+                                <i class="fas fa-check me-1"></i>Còn hàng
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">
+                                <i class="fas fa-times me-1"></i>Hết hàng
+                            </span>
+                        }
+                    </div>
+
+                    <!-- Category -->
+                    @if (Model.Category != null)
+                    {
+                        <div class="mb-3">
+                            <span class="text-muted me-2">Danh mục:</span>
+                            <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@Model.Category.CategoryId"
+                               class="badge bg-light text-dark border">
+                                @Model.Category.CategoryName
+                            </a>
+                            <span class="badge bg-light text-dark border ms-1">
+                                @(Model.Category.PetType == "Dog" ? "🐶 Chó" : "🐱 Mèo")
+                            </span>
+                        </div>
+                    }
+                </div>
+
+                <!-- Price -->
+                <div class="price-section mb-4">
+                    <div class="d-flex align-items-center">
+                        <span class="display-4 fw-bold text-primary me-3">
+                            @Model.Product.Price.ToString("N0")đ
+                        </span>
+                        @if (Model.Product.Price > 500000)
+                        {
+                            <span class="badge bg-secondary">Miễn phí vận chuyển</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="description mb-4">
+                    <h5 class="mb-3">Mô tả sản phẩm</h5>
+                    <p class="text-muted">@Model.Product.Description</p>
+                </div>
+
+                <!-- Product Details -->
+                <div class="product-details mb-4">
+                    <h5 class="mb-3">Thông tin chi tiết</h5>
+                    <div class="row">
+                        @if (!string.IsNullOrEmpty(Model.Product.Color))
+                        {
+                            <div class="col-md-6 mb-2">
+                                <strong>Màu sắc:</strong> @Model.Product.Color
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.Product.Size))
+                        {
+                            <div class="col-md-6 mb-2">
+                                <strong>Kích thước:</strong> @Model.Product.Size
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.Product.Material))
+                        {
+                            <div class="col-md-6 mb-2">
+                                <strong>Chất liệu:</strong> @Model.Product.Material
+                            </div>
+                        }
+                        <div class="col-md-6 mb-2">
+                            <strong>Số lượng tồn:</strong> @Model.Product.StockQuantity
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <strong>Ngày thêm:</strong> @Model.Product.CreatedAt.ToString("dd/MM/yyyy")
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add to Cart -->
+                <div class="add-to-cart-section mb-5">
+                    @if (Model.Product.StockQuantity > 0)
+                    {
+                        <form asp-controller="Product" asp-action="AddToCart" method="post" class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                <label for="quantity" class="form-label">Số lượng:</label>
+                            </div>
+                            <div class="col-auto">
+                                <div class="input-group" style="width: 120px;">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm quantity-minus">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" class="form-control text-center"
+                                           id="quantity" name="quantity" value="1" min="1" max="@Model.Product.StockQuantity">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm quantity-plus">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-cart-plus me-2"></i>
+                                    @if (Model.InCart)
+                                    {
+                                        <text>Thêm vào giỏ hàng</text>
+                                    }
+                                    else
+                                    {
+                                        <text>Thêm vào giỏ hàng</text>
+                                    }
+                                </button>
+                            </div>
+                            @if (Model.InCart)
+                            {
+                                <div class="col-12 mt-2">
+                                    <div class="alert alert-info py-2 mb-0">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        Sản phẩm đã có trong
+                                        <a asp-controller="Cart" asp-action="Index" class="alert-link">giỏ hàng</a>
+                                    </div>
+                                </div>
+                            }
+                        </form>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Sản phẩm tạm thời hết hàng. Vui lòng quay lại sau!
+                        </div>
+                        <button class="btn btn-secondary btn-lg" disabled>
+                            <i class="fas fa-cart-plus me-2"></i>Hết hàng
+                        </button>
+                    }
+                </div>
+
+                <!-- Share & Wishlist -->
+                <div class="product-actions">
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-outline-secondary">
+                            <i class="far fa-heart me-2"></i>Yêu thích
+                        </button>
+                        <button class="btn btn-outline-secondary" id="shareProduct">
+                            <i class="fas fa-share-alt me-2"></i>Chia sẻ
+                        </button>
+                        <button class="btn btn-outline-secondary">
+                            <i class="fas fa-chart-bar me-2"></i>So sánh
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Related Products -->
+@if (Model.RelatedProducts.Any())
+{
+    <section class="related-products py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Sản phẩm liên quan</h2>
+            <div class="product-grid">
+                @foreach (var product in Model.RelatedProducts)
+                {
+                    <partial name="_ProductCard" model="product" />
+                }
+            </div>
+        </div>
+    </section>
+}
+
+<!-- Product Tabs -->
+<section class="product-tabs py-5">
+    <div class="container">
+        <ul class="nav nav-tabs" id="productTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
+                        data-bs-target="#description" type="button">
+                    <i class="fas fa-file-alt me-2"></i>Mô tả chi tiết
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="specs-tab" data-bs-toggle="tab"
+                        data-bs-target="#specs" type="button">
+                    <i class="fas fa-list-alt me-2"></i>Thông số kỹ thuật
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab"
+                        data-bs-target="#reviews" type="button">
+                    <i class="fas fa-star me-2"></i>Đánh giá (@Model.ReviewCount)
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="shipping-tab" data-bs-toggle="tab"
+                        data-bs-target="#shipping" type="button">
+                    <i class="fas fa-truck me-2"></i>Vận chuyển & Đổi trả
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content p-4 border border-top-0 rounded-bottom" id="productTabContent">
+            <!-- Description Tab -->
+            <div class="tab-pane fade show active" id="description" role="tabpanel">
+                <p>@Model.Product.Description</p>
+                <h5>Đặc điểm nổi bật:</h5>
+                <ul>
+                    <li>Chất liệu an toàn, không độc hại</li>
+                    <li>Thiết kế phù hợp với đặc điểm của thú cưng</li>
+                    <li>Dễ dàng vệ sinh và bảo quản</li>
+                    <li>Kích thích vận động và trí tuệ</li>
+                    <li>Phù hợp cho mọi lứa tuổi thú cưng</li>
+                </ul>
+            </div>
+
+            <!-- Specifications Tab -->
+            <div class="tab-pane fade" id="specs" role="tabpanel">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th width="30%">Tên sản phẩm</th>
+                                <td>@Model.Product.ProductName</td>
+                            </tr>
+                            @if (!string.IsNullOrEmpty(Model.Product.Color))
+                            {
+                                <tr>
+                                    <th>Màu sắc</th>
+                                    <td>@Model.Product.Color</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.Product.Size))
+                            {
+                                <tr>
+                                    <th>Kích thước</th>
+                                    <td>@Model.Product.Size</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.Product.Material))
+                            {
+                                <tr>
+                                    <th>Chất liệu</th>
+                                    <td>@Model.Product.Material</td>
+                                </tr>
+                            }
+                            <tr>
+                                <th>Trọng lượng</th>
+                                <td>Vừa phải, dễ dàng di chuyển</td>
+                            </tr>
+                            <tr>
+                                <th>Phù hợp cho</th>
+                                <td>@(Model.Category?.PetType == "Dog" ? "Chó từ 3 tháng tuổi trở lên" : "Mèo từ 2 tháng tuổi trở lên")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Reviews Tab -->
+            <div class="tab-pane fade" id="reviews" role="tabpanel">
+                @if (Model.ReviewCount > 0)
+                {
+                    <div class="row mb-4">
+                        <div class="col-md-4 text-center">
+                            <div class="display-4 fw-bold text-warning mb-2">@Model.AverageRating.ToString("0.0")</div>
+                            <div class="rating-stars mb-2">
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <i class="fas fa-star @(i <= Model.AverageRating ? "text-warning" : "text-muted")"></i>
+                                }
+                            </div>
+                            <p class="text-muted">Dựa trên @Model.ReviewCount đánh giá</p>
+                        </div>
+                        <div class="col-md-8">
+                            <!-- Review stats would go here -->
+                        </div>
+                    </div>
+
+                    <div class="reviews-list">
+                        <!-- Sample reviews would go here -->
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Chức năng đánh giá đang được phát triển
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center py-4">
+                        <i class="fas fa-comment-alt fa-3x text-muted mb-3"></i>
+                        <h4>Chưa có đánh giá nào</h4>
+                        <p class="text-muted">Hãy là người đầu tiên đánh giá sản phẩm này!</p>
+                    </div>
+                }
+            </div>
+
+            <!-- Shipping Tab -->
+            <div class="tab-pane fade" id="shipping" role="tabpanel">
+                <h5>Chính sách vận chuyển:</h5>
+                <ul>
+                    <li>Miễn phí vận chuyển cho đơn hàng từ 500,000đ</li>
+                    <li>Phí vận chuyển 30,000đ cho đơn dưới 500,000đ</li>
+                    <li>Giao hàng toàn quốc trong 2-4 ngày làm việc</li>
+                    <li>Hỗ trợ giao hàng nhanh trong nội thành</li>
+                </ul>
+
+                <h5 class="mt-4">Chính sách đổi trả:</h5>
+                <ul>
+                    <li>Đổi trả trong vòng 7 ngày nếu sản phẩm lỗi</li>
+                    <li>Sản phẩm phải còn nguyên vẹn, chưa qua sử dụng</li>
+                    <li>Hỗ trợ đổi size/color nếu còn hàng</li>
+                    <li>Hoàn tiền trong vòng 3-5 ngày làm việc</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .product-images .main-image {
+        border: 1px solid #e9ecef;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+    }
+
+        .product-images .main-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+            .product-images .main-image img:hover {
+                transform: scale(1.05);
+            }
+
+    .thumbnail {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+    }
+
+        .thumbnail.active {
+            border-color: var(--primary-color);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .rating-stars {
+        font-size: 1.2rem;
+    }
+
+    .quantity-minus, .quantity-plus {
+        width: 40px;
+    }
+
+    #quantity {
+        max-width: 60px;
+    }
+
+    .product-tabs .nav-tabs {
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .product-tabs .nav-link {
+        border: none;
+        color: #6c757d;
+        font-weight: 500;
+        padding: 1rem 1.5rem;
+    }
+
+        .product-tabs .nav-link.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            background-color: transparent;
+        }
+
+    .product-tabs .tab-content {
+        min-height: 200px;
+    }
+
+    .related-products .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+</style>
+
+@section Scripts {
+    <script>
+        // Quantity controls
+        $('.quantity-minus').on('click', function() {
+            var input = $(this).closest('.input-group').find('input');
+            var value = parseInt(input.val());
+            if (value > 1) {
+                input.val(value - 1);
+            }
+        });
+
+        $('.quantity-plus').on('click', function() {
+            var input = $(this).closest('.input-group').find('input');
+            var value = parseInt(input.val());
+            var max = parseInt(input.attr('max'));
+            if (value < max) {
+                input.val(value + 1);
+            }
+        });
+
+        // Image thumbnail switching
+        $('.thumbnail').on('click', function() {
+            var imageUrl = $(this).data('image');
+            $('#mainProductImage').attr('src', imageUrl);
+            $('.thumbnail').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        // Share product
+        $('#shareProduct').on('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: '@Model.Product.ProductName',
+                    text: 'Xem sản phẩm này trên BestieToy',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback: Copy to clipboard
+                navigator.clipboard.writeText(window.location.href).then(function() {
+                    showToast('Đã sao chép link vào clipboard!', 'success');
+                });
+            }
+        });
+
+        // Tab content loading
+        $('#productTab button').on('click', function() {
+            var tabId = $(this).data('bs-target');
+            // In a real application, you might load content via AJAX here
+        });
+
+        // Add to cart form validation
+        $('form').on('submit', function(e) {
+            var quantity = parseInt($('#quantity').val());
+            var maxQuantity = parseInt($('#quantity').attr('max'));
+
+            if (quantity > maxQuantity) {
+                e.preventDefault();
+                showToast('Số lượng vượt quá tồn kho!', 'error');
+                $('#quantity').val(maxQuantity);
+            }
+        });
+    </script>
+}

@@ -1,0 +1,114 @@
+﻿@model BestieToy.Models.Product
+
+<div class="card product-card h-100">
+    <div class="position-relative">
+        <img src="@(Model.ImageUrl ?? "/images/default-product.jpg")"
+             class="card-img-top"
+             alt="@Model.ProductName"
+             loading="lazy">
+
+        @if (Model.StockQuantity <= 0)
+        {
+            <div class="position-absolute top-0 end-0 m-2">
+                <span class="badge bg-danger">Hết hàng</span>
+            </div>
+        }
+        else if (Model.StockQuantity <= 10)
+        {
+            <div class="position-absolute top-0 end-0 m-2">
+                <span class="badge bg-warning">Sắp hết</span>
+            </div>
+        }
+
+        <div class="card-actions position-absolute bottom-0 start-0 end-0 p-3 bg-white bg-opacity-90">
+            <div class="d-flex justify-content-between">
+                <a href="@Url.Action("Detail", "Product", new { id = Model.ProductId })"
+                   class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-eye"></i>
+                </a>
+
+                @if (Model.StockQuantity > 0)
+                {
+                    <button class="btn btn-sm btn-primary add-to-cart"
+                            data-product-id="@Model.ProductId"
+                            title="Thêm vào giỏ hàng">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                }
+                else
+                {
+                    <button class="btn btn-sm btn-secondary" disabled title="Hết hàng">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+            <a href="@Url.Action("Detail", "Product", new { id = Model.ProductId })"
+               class="text-decoration-none text-dark">
+                @Model.ProductName
+            </a>
+        </h5>
+
+        <p class="card-text flex-grow-1 small text-muted">
+            @if (!string.IsNullOrEmpty(Model.Description) && Model.Description.Length > 100)
+            {
+                @Model.Description.Substring(0, 100)
+                <text>...</text>
+            }
+            else
+            {
+                @Model.Description
+            }
+        </p>
+
+        <div class="mt-auto">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="price">@Model.Price.ToString("N0")đ</div>
+
+                @if (Model.StockQuantity > 0)
+                {
+                    <small class="text-muted">Còn: @Model.StockQuantity</small>
+                }
+            </div>
+
+            <div class="mt-2">
+                @if (!string.IsNullOrEmpty(Model.Color))
+                {
+                    <span class="badge bg-light text-dark border me-1">
+                        <i class="fas fa-palette me-1"></i>@Model.Color
+                    </span>
+                }
+                @if (!string.IsNullOrEmpty(Model.Size))
+                {
+                    <span class="badge bg-light text-dark border">
+                        <i class="fas fa-expand-alt me-1"></i>@Model.Size
+                    </span>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .product-card {
+        transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-actions {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover .card-actions {
+        opacity: 1;
+    }
+</style>

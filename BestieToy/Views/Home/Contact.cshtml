@@ -1,0 +1,376 @@
+﻿@model BestieToy.ViewModels.ContactViewModel
+
+@{
+    ViewData["Title"] = "Liên hệ";
+}
+
+<!-- Hero Section -->
+<div class="page-header py-5 bg-light mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold mb-3">Liên hệ với chúng tôi</h1>
+                <p class="lead mb-4">
+                    Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn.
+                    Hãy liên hệ nếu bạn có bất kỳ câu hỏi nào về sản phẩm hoặc dịch vụ.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-primary">Hỗ trợ 24/7</span>
+                    <span class="badge bg-secondary">Phản hồi trong 24h</span>
+                    <span class="badge bg-success">Tư vấn miễn phí</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                     alt="Liên hệ" class="img-fluid rounded-lg shadow">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row g-5">
+        <!-- Contact Information -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4">Thông tin liên hệ</h3>
+
+                    <!-- Address -->
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="h6 mb-1">Địa chỉ</h5>
+                            <p class="text-muted mb-0">
+                                123 Nguyễn Huệ, Phường Bến Nghé,<br>
+                                Quận 1, Thành phố Hồ Chí Minh
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-phone fa-2x text-primary"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="h6 mb-1">Điện thoại</h5>
+                            <p class="text-muted mb-0">
+                                (028) 3823 4567<br>
+                                0901 234 567 (Hotline)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-envelope fa-2x text-primary"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="h6 mb-1">Email</h5>
+                            <p class="text-muted mb-0">
+                                info@bestietoy.com<br>
+                                support@bestietoy.com
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-clock fa-2x text-primary"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="h6 mb-1">Giờ làm việc</h5>
+                            <p class="text-muted mb-0">
+                                Thứ 2 - Thứ 6: 8:00 - 20:00<br>
+                                Thứ 7 - Chủ nhật: 8:00 - 18:00
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="mt-5">
+                        <h5 class="h6 mb-3">Kết nối với chúng tôi</h5>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-zalo"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="h4 mb-4">Gửi tin nhắn cho chúng tôi</h3>
+                    <p class="text-muted mb-4">
+                        Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất.
+                    </p>
+
+                    <form asp-controller="Home" asp-action="Contact" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row g-3">
+                            <!-- Name -->
+                            <div class="col-md-6">
+                                <label asp-for="Name" class="form-label">Họ tên *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <input asp-for="Name" class="form-control"
+                                           placeholder="Nguyễn Văn A">
+                                </div>
+                                <span asp-validation-for="Name" class="text-danger small"></span>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label asp-for="Email" class="form-label">Email *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <input asp-for="Email" type="email" class="form-control"
+                                           placeholder="example@email.com">
+                                </div>
+                                <span asp-validation-for="Email" class="text-danger small"></span>
+                            </div>
+
+                            <!-- Subject -->
+                            <div class="col-12">
+                                <label asp-for="Subject" class="form-label">Tiêu đề *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-tag"></i>
+                                    </span>
+                                    <input asp-for="Subject" class="form-control"
+                                           placeholder="Tiêu đề tin nhắn">
+                                </div>
+                                <span asp-validation-for="Subject" class="text-danger small"></span>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="col-12">
+                                <label asp-for="Message" class="form-label">Nội dung *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text align-items-start">
+                                        <i class="fas fa-comment"></i>
+                                    </span>
+                                    <textarea asp-for="Message" class="form-control"
+                                              rows="6"
+                                              placeholder="Nội dung chi tiết..."></textarea>
+                                </div>
+                                <span asp-validation-for="Message" class="text-danger small"></span>
+                                <div class="form-text">
+                                    <small>Tối đa 2000 ký tự. Hiện tại: <span id="charCount">0</span>/2000</small>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">
+                                    <i class="fas fa-paper-plane me-2"></i>Gửi tin nhắn
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="mt-5">
+                <h3 class="h4 mb-4">Câu hỏi thường gặp</h3>
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                <i class="fas fa-question-circle me-2 text-primary"></i>
+                                Tôi có thể đổi trả sản phẩm trong bao lâu?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show"
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Bạn có thể đổi trả sản phẩm trong vòng 7 ngày kể từ ngày nhận hàng,
+                                với điều kiện sản phẩm còn nguyên vẹn, chưa qua sử dụng và còn đầy đủ phụ kiện.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                <i class="fas fa-question-circle me-2 text-primary"></i>
+                                Phí vận chuyển là bao nhiêu?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Miễn phí vận chuyển cho đơn hàng từ 500,000đ trở lên.
+                                Đơn hàng dưới 500,000đ áp dụng phí vận chuyển 30,000đ.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                <i class="fas fa-question-circle me-2 text-primary"></i>
+                                Tôi có thể thanh toán bằng những phương thức nào?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Chúng tôi chấp nhận nhiều phương thức thanh toán:
+                                Tiền mặt khi nhận hàng (COD), Chuyển khoản ngân hàng,
+                                Thẻ tín dụng/ghi nợ, và các ví điện tử phổ biến.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Map Section -->
+<div class="container-fluid px-0">
+    <div class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.518835315885!2d106.69927631533435!3d10.771435492324157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f40a3b49e59%3A0xa1bd14e493a9db98!2s123%20Nguy%E1%BB%85n%20Hu%E1%BB%87%2C%20B%E1%BA%BFn%20Ngh%C3%A9%2C%20Qu%E1%BA%ADn%201%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam!5e0!3m2!1svi!2s!4v1645781234567!5m2!1svi!2s"
+                style="border:0; width: 100%; height: 400px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+<style>
+    .page-header {
+        background: linear-gradient(135deg, #F7FFF7 0%, #FFFFFF 100%);
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #f8f9fa;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+    .input-group-text {
+        background-color: #f8f9fa;
+        border-right: none;
+    }
+
+    .input-group .form-control, .input-group textarea {
+        border-left: none;
+    }
+
+    .accordion-button {
+        font-weight: 500;
+    }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(255, 107, 53, 0.1);
+            color: var(--primary-color);
+        }
+
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 107, 53, 0.25);
+        }
+
+    .map-section {
+        border-top: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    iframe {
+        filter: grayscale(20%);
+    }
+</style>
+
+@section Scripts {
+    <script>
+        // Character counter for message textarea
+        $('#Message').on('input', function() {
+            var length = $(this).val().length;
+            $('#charCount').text(length);
+
+            if (length > 2000) {
+                $(this).addClass('is-invalid');
+                $('#charCount').addClass('text-danger');
+            } else {
+                $(this).removeClass('is-invalid');
+                $('#charCount').removeClass('text-danger');
+            }
+        });
+
+        // Form validation
+        $('form').on('submit', function(e) {
+            var message = $('#Message').val();
+
+            if (message.length > 2000) {
+                e.preventDefault();
+                showToast('Nội dung tin nhắn không được vượt quá 2000 ký tự', 'error');
+                return false;
+            }
+
+            if (!message.trim()) {
+                e.preventDefault();
+                showToast('Vui lòng nhập nội dung tin nhắn', 'error');
+                return false;
+            }
+        });
+
+        // Initialize accordion
+        $(document).ready(function() {
+            // Set initial character count
+            $('#charCount').text($('#Message').val().length);
+
+            // Accordion animation
+            $('.accordion-button').on('click', function() {
+                $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
+            });
+        });
+    </script>
+}

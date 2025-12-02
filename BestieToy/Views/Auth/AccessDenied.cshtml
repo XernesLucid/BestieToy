@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Truy cập bị từ chối";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 text-center">
+            <!-- Error Icon -->
+            <div class="error-icon mb-4">
+                <i class="fas fa-ban fa-5x text-danger"></i>
+            </div>
+
+            <!-- Error Message -->
+            <h1 class="display-5 fw-bold mb-3">Truy cập bị từ chối</h1>
+            <p class="lead text-muted mb-4">
+                Bạn không có quyền truy cập vào trang này.
+                Vui lòng liên hệ quản trị viên nếu bạn cho rằng đây là lỗi.
+            </p>
+
+            <!-- Possible Reasons -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Có thể do:</h5>
+                    <ul class="list-unstyled text-start">
+                        <li class="mb-2">
+                            <i class="fas fa-times-circle text-danger me-2"></i>
+                            Bạn chưa đăng nhập tài khoản
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-times-circle text-danger me-2"></i>
+                            Tài khoản của bạn không có quyền truy cập
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-times-circle text-danger me-2"></i>
+                            Phiên đăng nhập đã hết hạn
+                        </li>
+                        <li>
+                            <i class="fas fa-times-circle text-danger me-2"></i>
+                            Yêu cầu truy cập không hợp lệ
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg">
+                    <i class="fas fa-home me-2"></i>Về trang chủ
+                </a>
+
+                <a asp-controller="Auth" asp-action="Login" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+                </a>
+
+                <a href="mailto:admin@bestietoy.com" class="btn btn-outline-secondary btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Liên hệ hỗ trợ
+                </a>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mt-5">
+                <p class="text-muted">
+                    Cần hỗ trợ? Liên hệ với chúng tôi:
+                    <a href="mailto:admin@bestietoy.com" class="text-decoration-none">admin@bestietoy.com</a>
+                    hoặc gọi <strong>028 3823 4567</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .error-icon {
+        animation: bounce 1s infinite alternate;
+    }
+
+    @@keyframes bounce {
+        from {
+            transform: translateY(0px);
+        }
+
+        to {
+            transform: translateY(-10px);
+        }
+    }
+
+    .card {
+        border-radius: var(--radius-lg);
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .list-unstyled li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+        .list-unstyled li:last-child {
+            border-bottom: none;
+        }
+</style>
+
+@section Scripts {
+    <script>
+        // Auto redirect to home after 10 seconds
+        setTimeout(function() {
+            window.location.href = '@Url.Action("Index", "Home")';
+        }, 10000);
+
+        // Countdown timer
+        var countdown = 10;
+        var timerElement = $('#countdown-timer');
+
+        if (timerElement.length) {
+            var timer = setInterval(function() {
+                countdown--;
+                timerElement.text(countdown);
+
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    window.location.href = '@Url.Action("Index", "Home")';
+                }
+            }, 1000);
+        }
+    </script>
+
+    <!-- Add countdown timer -->
+    <div class="mt-3">
+        <p class="text-muted">
+            Tự động chuyển về trang chủ sau <span id="countdown-timer" class="fw-bold">10</span> giây...
+        </p>
+    </div>
+}
