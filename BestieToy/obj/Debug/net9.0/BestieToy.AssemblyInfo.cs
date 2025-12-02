@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BestieToy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3647229c4bbb1425815169263df0d2b62535055")]
 [assembly: System.Reflection.AssemblyProductAttribute("BestieToy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BestieToy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

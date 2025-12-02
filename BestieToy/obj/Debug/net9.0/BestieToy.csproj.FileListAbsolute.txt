@@ -82,3 +82,4 @@ C:\BestieToy\BestieToy\obj\Debug\net9.0\refint\BestieToy.dll
 C:\BestieToy\BestieToy\obj\Debug\net9.0\BestieToy.pdb
 C:\BestieToy\BestieToy\obj\Debug\net9.0\BestieToy.genruntimeconfig.cache
 C:\BestieToy\BestieToy\obj\Debug\net9.0\ref\BestieToy.dll
+C:\BestieToy\BestieToy\obj\Debug\net9.0\BestieToy.sourcelink.json
