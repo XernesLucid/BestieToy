@@ -3,6 +3,54 @@
   "WorkspaceRootPath": "C:\\BestieToy\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\wwwroot\\css\\orders.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\wwwroot\\css\\orders.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\order\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\order\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\order\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\order\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\profile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\profile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\wwwroot\\css\\profile.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\wwwroot\\css\\profile.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\cart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\cart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -43,16 +87,8 @@
       "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\viewmodels\\contactviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\viewmodels\\contactviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|solutionrelative:bestietoy\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91E1BDE6-82DB-47DE-8F5A-4B4D3FE0C818}|BestieToy\\BestieToy.csproj|c:\\bestietoy\\bestietoy\\views\\product\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -70,151 +106,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "BestieToy\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "BestieToy\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:53:30.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "About.cshtml",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Home\\About.cshtml",
-              "RelativeDocumentMoniker": "BestieToy\\Views\\Home\\About.cshtml",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Home\\About.cshtml",
-              "RelativeToolTip": "BestieToy\\Views\\Home\\About.cshtml",
-              "ViewState": "AgIAAJMBAAAAAAAAAAAAwLwBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:50:53.864Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "BestieToy\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "BestieToy\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:42:34.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "error.css",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\wwwroot\\css\\error.css",
-              "RelativeDocumentMoniker": "BestieToy\\wwwroot\\css\\error.css",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\wwwroot\\css\\error.css",
-              "RelativeToolTip": "BestieToy\\wwwroot\\css\\error.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-12-02T19:41:44.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Contact.cshtml",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Home\\Contact.cshtml",
-              "RelativeDocumentMoniker": "BestieToy\\Views\\Home\\Contact.cshtml",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Home\\Contact.cshtml",
-              "RelativeToolTip": "BestieToy\\Views\\Home\\Contact.cshtml",
-              "ViewState": "AgIAAPYAAAAAAAAAAADwvxEBAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:34:40.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "BestieToy\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "BestieToy\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:33:49.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccessDenied.cshtml",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Auth\\AccessDenied.cshtml",
-              "RelativeDocumentMoniker": "BestieToy\\Views\\Auth\\AccessDenied.cshtml",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Auth\\AccessDenied.cshtml",
-              "RelativeToolTip": "BestieToy\\Views\\Auth\\AccessDenied.cshtml",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAYwIMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:33:32.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Auth\\Register.cshtml",
-              "RelativeDocumentMoniker": "BestieToy\\Views\\Auth\\Register.cshtml",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Auth\\Register.cshtml",
-              "RelativeToolTip": "BestieToy\\Views\\Auth\\Register.cshtml",
-              "ViewState": "AgIAAAsBAAAAAAAAAAAYwDYBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:33:12.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Auth\\Login.cshtml",
-              "RelativeDocumentMoniker": "BestieToy\\Views\\Auth\\Login.cshtml",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Auth\\Login.cshtml",
-              "RelativeToolTip": "BestieToy\\Views\\Auth\\Login.cshtml",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAYwMoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:32:56.045Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ContactViewModel.cs",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\ViewModels\\ContactViewModel.cs",
-              "RelativeDocumentMoniker": "BestieToy\\ViewModels\\ContactViewModel.cs",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\ViewModels\\ContactViewModel.cs",
-              "RelativeToolTip": "BestieToy\\ViewModels\\ContactViewModel.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAgwBgAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T19:29:01.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "BestieToy\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\BestieToy\\BestieToy\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "BestieToy\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAswHoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T19:26:50.355Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -241,7 +134,259 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "BestieToy\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "BestieToy\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAOMAAAAAAAAAAAA+wAsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T21:20:13.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAAI4BAAAAAAAAAAAuwJ0BAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T21:11:39.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Order\\Detail.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Order\\Detail.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Order\\Detail.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Order\\Detail.cshtml",
+              "ViewState": "AgIAAG8BAAAAAAAAAAAuwJcBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T21:01:34.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "orders.css",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\wwwroot\\css\\orders.css",
+              "RelativeDocumentMoniker": "BestieToy\\wwwroot\\css\\orders.css",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\wwwroot\\css\\orders.css",
+              "RelativeToolTip": "BestieToy\\wwwroot\\css\\orders.css",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAQwM4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-02T20:59:17.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "History.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Order\\History.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Order\\History.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Order\\History.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Order\\History.cshtml",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAwwIcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T20:53:29.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Profile\\Edit.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Profile\\Edit.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Profile\\Edit.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Profile\\Edit.cshtml",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAAwA8BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T20:51:27.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "profile.css",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\wwwroot\\css\\profile.css",
+              "RelativeDocumentMoniker": "BestieToy\\wwwroot\\css\\profile.css",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\wwwroot\\css\\profile.css",
+              "RelativeToolTip": "BestieToy\\wwwroot\\css\\profile.css",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAiwGkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-02T20:50:41.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Profile\\Index.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Profile\\Index.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Profile\\Index.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Profile\\Index.cshtml",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAwNQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T20:50:04.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Cart\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Cart\\Checkout.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Cart\\Checkout.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Cart\\Checkout.cshtml",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAwIoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T20:37:31.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T19:53:30.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAJMBAAAAAAAAAAAAwLwBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T19:50:53.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAAwAgBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T19:42:34.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "error.css",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\wwwroot\\css\\error.css",
+              "RelativeDocumentMoniker": "BestieToy\\wwwroot\\css\\error.css",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\wwwroot\\css\\error.css",
+              "RelativeToolTip": "BestieToy\\wwwroot\\css\\error.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-02T19:41:44.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AgIAAPYAAAAAAAAAAADwvxEBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T19:34:40.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T19:33:49.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Auth\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Auth\\AccessDenied.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Auth\\AccessDenied.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Auth\\AccessDenied.cshtml",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAYwIMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T19:33:32.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Auth\\Register.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Auth\\Register.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Auth\\Register.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Auth\\Register.cshtml",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAYwDYBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T19:33:12.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "BestieToy\\Views\\Auth\\Login.cshtml",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "BestieToy\\Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAYwMoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T19:32:56.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ContactViewModel.cs",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\ViewModels\\ContactViewModel.cs",
+              "RelativeDocumentMoniker": "BestieToy\\ViewModels\\ContactViewModel.cs",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\ViewModels\\ContactViewModel.cs",
+              "RelativeToolTip": "BestieToy\\ViewModels\\ContactViewModel.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwBgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T19:29:01.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "BestieToy\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\BestieToy\\BestieToy\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "BestieToy\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAA9wHoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T19:26:50.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "HomeViewModel.cs",
               "DocumentMoniker": "C:\\BestieToy\\BestieToy\\ViewModels\\HomeViewModel.cs",
               "RelativeDocumentMoniker": "BestieToy\\ViewModels\\HomeViewModel.cs",
@@ -254,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "Detail.cshtml",
               "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Product\\Detail.cshtml",
               "RelativeDocumentMoniker": "BestieToy\\Views\\Product\\Detail.cshtml",
@@ -262,12 +407,11 @@
               "RelativeToolTip": "BestieToy\\Views\\Product\\Detail.cshtml",
               "ViewState": "AgIAAO8BAAAAAAAAAAAYwBoCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:22:38.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T19:22:38.565Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Product\\Index.cshtml",
               "RelativeDocumentMoniker": "BestieToy\\Views\\Product\\Index.cshtml",
@@ -275,12 +419,11 @@
               "RelativeToolTip": "BestieToy\\Views\\Product\\Index.cshtml",
               "ViewState": "AgIAAFYBAAAAAAAAAAAYwIEBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:21:18.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T19:21:18.836Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 20,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\BestieToy\\BestieToy\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "BestieToy\\Views\\Home\\Index.cshtml",
@@ -288,8 +431,7 @@
               "RelativeToolTip": "BestieToy\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAADMAAAAAAAAAAAAIwJ0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T19:20:03.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T19:20:03.711Z"
             }
           ]
         }

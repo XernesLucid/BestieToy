@@ -1,0 +1,10 @@
+wwwroot\js\site.js
+wwwroot\css\site.css
+wwwroot\css\error.css
+wwwroot\css\orders.css
+wwwroot\css\profile.css
+C:\BestieToy\BestieToy\wwwroot\js\site.js
+C:\BestieToy\BestieToy\wwwroot\css\site.css
+C:\BestieToy\BestieToy\wwwroot\css\error.css
+C:\BestieToy\BestieToy\wwwroot\css\orders.css
+C:\BestieToy\BestieToy\wwwroot\css\profile.css

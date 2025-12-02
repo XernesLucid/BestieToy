@@ -83,3 +83,11 @@ C:\BestieToy\BestieToy\obj\Debug\net9.0\BestieToy.pdb
 C:\BestieToy\BestieToy\obj\Debug\net9.0\BestieToy.genruntimeconfig.cache
 C:\BestieToy\BestieToy\obj\Debug\net9.0\ref\BestieToy.dll
 C:\BestieToy\BestieToy\obj\Debug\net9.0\BestieToy.sourcelink.json
+C:\BestieToy\BestieToy\bin\Debug\net9.0\BestieToy.staticwebassets.runtime.json
+C:\BestieToy\BestieToy\obj\Debug\net9.0\BestieToy.RazorAssemblyInfo.cache
+C:\BestieToy\BestieToy\obj\Debug\net9.0\BestieToy.RazorAssemblyInfo.cs
+C:\BestieToy\BestieToy\obj\Debug\net9.0\compressed\uo8lq4c02n-joi9m9w5t3.gz
+C:\BestieToy\BestieToy\obj\Debug\net9.0\compressed\ww71h5m96x-nbfftdvcwu.gz
+C:\BestieToy\BestieToy\obj\Debug\net9.0\compressed\zxcxfgxzi4-klswlv5hzy.gz
+C:\BestieToy\BestieToy\obj\Debug\net9.0\compressed\mzi0ngq4p9-2wackzgj9y.gz
+C:\BestieToy\BestieToy\obj\Debug\net9.0\compressed\wjzqst4ypq-d8i0pm2tep.gz

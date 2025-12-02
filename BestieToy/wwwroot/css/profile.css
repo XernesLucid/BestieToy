@@ -1,0 +1,105 @@
+﻿/* Profile Page Specific Styles */
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0.75rem 0;
+    margin-bottom: 0;
+}
+
+/* Profile Avatar */
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6B35 0%, #4ECDC4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 auto;
+}
+
+/* Sidebar Navigation */
+.nav-link {
+    padding: 0.75rem 1rem;
+    color: #333;
+    border-radius: 8px;
+    margin-bottom: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+    .nav-link:hover {
+        background-color: rgba(255, 107, 53, 0.1);
+        color: #FF6B35;
+    }
+
+    .nav-link.active {
+        background-color: rgba(255, 107, 53, 0.15);
+        color: #FF6B35;
+        font-weight: 600;
+    }
+
+/* Info Cards */
+.info-card {
+    transition: transform 0.3s ease;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+}
+
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-color: #FF6B35;
+    }
+
+/* Read-only Fields */
+.form-control-plaintext {
+    min-height: 45px;
+    line-height: 1.5;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #FF8E53 0%, #FF6B35 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    }
+
+/* Badges */
+.badge.bg-primary {
+    background: linear-gradient(135deg, #FF6B35 0%, #4ECDC4 100%) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .info-card {
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .d-flex.gap-2 {
+        flex-direction: column;
+    }
+}

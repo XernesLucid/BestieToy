@@ -1,0 +1,439 @@
+﻿@{
+    ViewData["Title"] = "Dashboard Admin";
+}
+
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="bg-light py-3">
+    <div class="container">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dashboard Admin</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- Dashboard Content -->
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="h3 mb-2"><i class="fas fa-tachometer-alt me-2 text-primary"></i>Dashboard Admin</h1>
+                    <p class="text-muted mb-0">Tổng quan hệ thống quản lý BestieToy</p>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-calendar me-2"></i>Hôm nay
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Hôm nay</a></li>
+                        <li><a class="dropdown-item" href="#">7 ngày qua</a></li>
+                        <li><a class="dropdown-item" href="#">Tháng này</a></li>
+                        <li><a class="dropdown-item" href="#">Quý này</a></li>
+                        <li><a class="dropdown-item" href="#">Năm nay</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row mb-4">
+        <!-- Total Users -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-start border-primary border-4 shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs fw-bold text-primary text-uppercase mb-1">
+                                Tổng người dùng
+                            </div>
+                            <div class="h5 mb-0 fw-bold text-gray-800">@ViewBag.TotalUsers</div>
+                            <div class="mt-2 mb-0 text-muted">
+                                <span class="text-success me-2">
+                                    <i class="fas fa-arrow-up me-1"></i>
+                                    12%
+                                </span>
+                                <span class="text-nowrap">So với tháng trước</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Products -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-start border-success border-4 shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs fw-bold text-success text-uppercase mb-1">
+                                Tổng sản phẩm
+                            </div>
+                            <div class="h5 mb-0 fw-bold text-gray-800">@ViewBag.TotalProducts</div>
+                            <div class="mt-2 mb-0 text-muted">
+                                <span class="text-success me-2">
+                                    <i class="fas fa-arrow-up me-1"></i>
+                                    8%
+                                </span>
+                                <span class="text-nowrap">So với tháng trước</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-box fa-2x text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Categories -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-start border-info border-4 shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs fw-bold text-info text-uppercase mb-1">
+                                Tổng danh mục
+                            </div>
+                            <div class="h5 mb-0 fw-bold text-gray-800">@ViewBag.TotalCategories</div>
+                            <div class="mt-2 mb-0 text-muted">
+                                <span class="text-success me-2">
+                                    <i class="fas fa-arrow-up me-1"></i>
+                                    5%
+                                </span>
+                                <span class="text-nowrap">So với tháng trước</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-list fa-2x text-info"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Orders (Placeholder - TODO in controller) -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-start border-warning border-4 shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs fw-bold text-warning text-uppercase mb-1">
+                                Tổng đơn hàng
+                            </div>
+                            <div class="h5 mb-0 fw-bold text-gray-800">248</div>
+                            <div class="mt-2 mb-0 text-muted">
+                                <span class="text-success me-2">
+                                    <i class="fas fa-arrow-up me-1"></i>
+                                    15%
+                                </span>
+                                <span class="text-nowrap">So với tháng trước</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-shopping-cart fa-2x text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-xl-8">
+            <!-- Revenue Chart Placeholder -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 fw-bold text-primary">Doanh thu 30 ngày qua</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area" style="height: 320px;">
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <div class="text-center">
+                                <i class="fas fa-chart-line fa-3x text-muted mb-3"></i>
+                                <h5 class="text-muted">Biểu đồ doanh thu</h5>
+                                <p class="text-muted small">Sử dụng Chart.js để hiển thị dữ liệu doanh thu</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-primary me-2">Doanh thu: 15.8M đ</span>
+                                    <span class="badge bg-success">Tăng 12.5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 fw-bold text-primary">Đơn hàng gần đây</h6>
+                    <a asp-controller="Admin" asp-action="Orders" class="btn btn-sm btn-outline-primary">Xem tất cả</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover" width="100%" cellspacing="0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Mã đơn</th>
+                                    <th>Khách hàng</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>ORD2024120001</strong></td>
+                                    <td>Nguyễn Văn Khánh</td>
+                                    <td>20/12/2024</td>
+                                    <td>865,000 đ</td>
+                                    <td><span class="badge bg-success">Đã giao</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ORD2024120002</strong></td>
+                                    <td>Lê Minh Thảo</td>
+                                    <td>19/12/2024</td>
+                                    <td>285,000 đ</td>
+                                    <td><span class="badge bg-info">Đang giao</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ORD2024120003</strong></td>
+                                    <td>Trần Anh Tuấn</td>
+                                    <td>18/12/2024</td>
+                                    <td>320,000 đ</td>
+                                    <td><span class="badge bg-primary">Đã xác nhận</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ORD2024120004</strong></td>
+                                    <td>Hoàng Thị Mỹ</td>
+                                    <td>17/12/2024</td>
+                                    <td>1,250,000 đ</td>
+                                    <td><span class="badge bg-warning">Đang chờ</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-xl-4">
+            <!-- Quick Actions -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 fw-bold text-primary">Thao tác nhanh</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <a asp-controller="Admin" asp-action="Users" class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center">
+                                <i class="fas fa-users fa-2x mb-2"></i>
+                                <span>Quản lý Users</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a asp-controller="Admin" asp-action="Products" class="btn btn-outline-success w-100 h-100 py-3 d-flex flex-column align-items-center">
+                                <i class="fas fa-box fa-2x mb-2"></i>
+                                <span>Sản phẩm</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a asp-controller="Admin" asp-action="Orders" class="btn btn-outline-info w-100 h-100 py-3 d-flex flex-column align-items-center">
+                                <i class="fas fa-shopping-cart fa-2x mb-2"></i>
+                                <span>Đơn hàng</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a asp-controller="Admin" asp-action="Categories" class="btn btn-outline-warning w-100 h-100 py-3 d-flex flex-column align-items-center">
+                                <i class="fas fa-list fa-2x mb-2"></i>
+                                <span>Danh mục</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 fw-bold text-primary">Trạng thái hệ thống</h6>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="small">Database</span>
+                            <span class="small fw-bold text-success">Online</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="small">Server</span>
+                            <span class="small fw-bold text-success">Running</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="small">Storage</span>
+                            <span class="small fw-bold text-warning">65%</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-0">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="small">Memory</span>
+                            <span class="small fw-bold text-info">42%</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 42%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Low Stock Alert -->
+            <div class="card shadow-sm border-left-warning">
+                <div class="card-header py-3 bg-warning">
+                    <h6 class="m-0 fw-bold text-dark"><i class="fas fa-exclamation-triangle me-2"></i>Sản phẩm sắp hết hàng</h6>
+                </div>
+                <div class="card-body">
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-0 border-0">
+                            <div>
+                                <h6 class="mb-1">Tháp Mèo 5 Tầng Deluxe</h6>
+                                <small class="text-muted">Còn: 6 sản phẩm</small>
+                            </div>
+                            <span class="badge bg-danger">Sắp hết</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-0 border-0">
+                            <div>
+                                <h6 class="mb-1">Chuồng Nhựa Elite Pet Home</h6>
+                                <small class="text-muted">Còn: 8 sản phẩm</small>
+                            </div>
+                            <span class="badge bg-warning">Còn ít</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-0 border-0">
+                            <div>
+                                <h6 class="mb-1">Dây Dắt Retractable Flexi</h6>
+                                <small class="text-muted">Còn: 12 sản phẩm</small>
+                            </div>
+                            <span class="badge bg-warning">Còn ít</span>
+                        </div>
+                    </div>
+                    <a asp-controller="Staff" asp-action="LowStock" class="btn btn-outline-warning btn-sm w-100 mt-3">
+                        <i class="fas fa-list me-2"></i>Xem tất cả
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Session & Cookies Status (Y2, Y4 requirement) -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header py-3">
+                    <h6 class="m-0 fw-bold text-primary">
+                        <i class="fas fa-cookie-bite me-2"></i>Session & Cookies Status
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="alert alert-info mb-3">
+                                <h6 class="alert-heading"><i class="fas fa-user-clock me-2"></i>Session Status</h6>
+                                <p class="mb-0 small">
+                                    <strong>User:</strong> @User.Identity?.Name<br>
+                                    <strong>Role:</strong> Admin<br>
+                                    <strong>Session ID:</strong> @Context.Session.Id<br>
+                                    <strong>Session Active:</strong> <span class="badge bg-success">Yes</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-success mb-3">
+                                <h6 class="alert-heading"><i class="fas fa-shield-alt me-2"></i>Cookies Status</h6>
+                                <p class="mb-0 small">
+                                    <strong>Authentication:</strong> <span class="badge bg-success">Active</span><br>
+                                    <strong>Cart Items:</strong> Using session storage<br>
+                                    <strong>Remember Me:</strong> @(Context.Request.Cookies.ContainsKey(".AspNetCore.Identity.Application") ? "Enabled" : "Disabled")<br>
+                                    <strong>Security:</strong> HttpOnly, Secure cookies enabled
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dashboard JavaScript -->
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Time period selector
+            $('.dropdown-item').click(function(e) {
+                e.preventDefault();
+                var period = $(this).text();
+                $('.dropdown-toggle').html('<i class="fas fa-calendar me-2"></i>' + period);
+
+                // In real app, this would update dashboard data via AJAX
+                console.log('Period changed to:', period);
+            });
+
+            // Refresh stats button (if added)
+            $('#refreshStats').click(function() {
+                var btn = $(this);
+                btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin me-2"></i>Đang tải...');
+
+                setTimeout(function() {
+                    btn.prop('disabled', false).html('<i class="fas fa-sync-alt me-2"></i>Làm mới');
+                    alert('Thống kê đã được cập nhật');
+                }, 1500);
+            });
+
+            // Print report (placeholder)
+            $('#printReport').click(function() {
+                window.print();
+            });
+        });
+    </script>
+}

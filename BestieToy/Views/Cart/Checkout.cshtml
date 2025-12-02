@@ -1,0 +1,342 @@
+﻿@model BestieToy.ViewModels.CheckoutViewModel
+@{
+    ViewData["Title"] = "Thanh toán";
+    ViewData["AdditionalCss"] = "checkout";
+}
+
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="bg-light py-3">
+    <div class="container">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Cart" asp-action="Index">Giỏ hàng</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- Checkout Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Shipping Information -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-shipping-fast me-2"></i>Thông tin giao hàng</h4>
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Cart" asp-action="ProcessCheckout" method="post" id="checkoutForm">
+                            @Html.AntiForgeryToken()
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label asp-for="FullName" class="form-label"></label>
+                                    <input asp-for="FullName" class="form-control" />
+                                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label asp-for="Phone" class="form-label"></label>
+                                    <input asp-for="Phone" class="form-control" />
+                                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Email" class="form-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger small"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="ShippingAddress" class="form-label"></label>
+                                <textarea asp-for="ShippingAddress" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="ShippingAddress" class="text-danger small"></span>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="city" class="form-label">Tỉnh/Thành phố <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="city" name="city" required>
+                                        <option value="">Chọn tỉnh/thành phố</option>
+                                        <option value="HCM">TP. Hồ Chí Minh</option>
+                                        <option value="HN">Hà Nội</option>
+                                        <option value="DN">Đà Nẵng</option>
+                                        <option value="HP">Hải Phòng</option>
+                                        <option value="CT">Cần Thơ</option>
+                                    </select>
+                                    <div class="invalid-feedback">Vui lòng chọn tỉnh/thành phố</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="district" class="form-label">Quận/Huyện <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="district" name="district" required>
+                                    <div class="invalid-feedback">Vui lòng nhập quận/huyện</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Notes" class="form-label"></label>
+                                <textarea asp-for="Notes" class="form-control" rows="2" placeholder="Ví dụ: Giao giờ hành chính, hẹn trước 30 phút..."></textarea>
+                                <span asp-validation-for="Notes" class="text-danger small"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-credit-card me-2"></i>Phương thức thanh toán</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- COD Payment -->
+                        <div class="payment-option d-flex align-items-start mb-3">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input" type="radio" asp-for="PaymentMethod"
+                                       id="cod" value="cod" checked>
+                            </div>
+                            <label class="form-check-label flex-grow-1 d-flex align-items-center" for="cod">
+                                <i class="fas fa-money-bill-wave fa-lg me-3 text-success"></i>
+                                <span class="d-flex flex-column">
+                                    <strong>Thanh toán khi nhận hàng (COD)</strong>
+                                    <span class="text-muted small">Thanh toán bằng tiền mặt khi nhận hàng</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Banking Payment -->
+                        <div class="payment-option d-flex align-items-start mb-3">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input" type="radio" asp-for="PaymentMethod"
+                                       id="banking" value="banking">
+                            </div>
+                            <label class="form-check-label flex-grow-1 d-flex align-items-center" for="banking">
+                                <i class="fas fa-university fa-lg me-3 text-primary"></i>
+                                <span class="d-flex flex-column">
+                                    <strong>Chuyển khoản ngân hàng</strong>
+                                    <span class="text-muted small">Chuyển khoản qua ngân hàng - STK: 123456789 (MB Bank)</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- MoMo Payment -->
+                        <div class="payment-option d-flex align-items-start">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input" type="radio" asp-for="PaymentMethod"
+                                       id="momo" value="momo">
+                            </div>
+                            <label class="form-check-label flex-grow-1 d-flex align-items-center" for="momo">
+                                <i class="fas fa-mobile-alt fa-lg me-3" style="color: #AF0DBF;"></i>
+                                <span class="d-flex flex-column">
+                                    <strong>Ví MoMo</strong>
+                                    <span class="text-muted small">Thanh toán qua ví điện tử MoMo</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <span asp-validation-for="PaymentMethod" class="text-danger small mt-2 d-block"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm sticky-top" style="top: 100px;">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-receipt me-2"></i>Đơn hàng của bạn</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Cart Summary -->
+                        <div class="mb-4">
+                            <h6 class="mb-3">Sản phẩm (@Model?.ItemCount sản phẩm)</h6>
+                            <div class="cart-summary">
+                                <!-- In a real app, you would loop through cart items here -->
+                                <!-- For now, showing summary only -->
+                                <div class="text-center py-3">
+                                    <i class="fas fa-shopping-cart fa-2x text-muted mb-2"></i>
+                                    <p class="text-muted mb-0">Đang tải thông tin giỏ hàng...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Tạm tính:</span>
+                                <span>@Model?.Subtotal.ToString("N0") đ</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Phí vận chuyển:</span>
+                                @if (Model?.ShippingFee > 0)
+                                {
+                                    <span>@Model.ShippingFee.ToString("N0") đ</span>
+                                }
+                                else
+                                {
+                                    <span class="text-success">Miễn phí</span>
+                                }
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Tổng cộng:</span>
+                                <span class="text-primary h5 mb-0">@Model?.Total.ToString("N0") đ</span>
+                            </div>
+                        </div>
+
+                        <!-- Terms & Conditions -->
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label small" for="terms">
+                                Tôi đồng ý với <a href="#" class="text-primary">điều khoản và điều kiện</a> mua hàng
+                            </label>
+                            <div class="invalid-feedback">Vui lòng đồng ý với điều khoản</div>
+                        </div>
+
+                        <!-- Checkout Buttons -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" form="checkoutForm" class="btn btn-primary btn-lg">
+                                <i class="fas fa-lock me-2"></i>Đặt hàng
+                            </button>
+                            <a asp-controller="Cart" asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Quay lại giỏ hàng
+                            </a>
+                        </div>
+
+                        <!-- Security Notice -->
+                        <div class="mt-4 text-center">
+                            <div class="d-flex justify-content-center mb-2">
+                                <i class="fas fa-shield-alt text-primary me-2"></i>
+                                <i class="fas fa-lock text-primary me-2"></i>
+                                <i class="fas fa-check-circle text-primary"></i>
+                            </div>
+                            <p class="small text-muted mb-0">
+                                Thông tin của bạn được bảo mật và mã hóa. Chúng tôi không lưu trữ thông tin thẻ tín dụng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Shipping Info Banner -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-3 mb-md-0">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-circle bg-primary mb-2">
+                        <i class="fas fa-shipping-fast text-white"></i>
+                    </div>
+                    <h6 class="mb-1">Giao hàng nhanh</h6>
+                    <p class="small mb-0 text-muted">2-4 ngày làm việc</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 mb-md-0">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-circle bg-primary mb-2">
+                        <i class="fas fa-undo-alt text-white"></i>
+                    </div>
+                    <h6 class="mb-1">Đổi trả dễ dàng</h6>
+                    <p class="small mb-0 text-muted">30 ngày đổi trả</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 mb-md-0">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-circle bg-primary mb-2">
+                        <i class="fas fa-headset text-white"></i>
+                    </div>
+                    <h6 class="mb-1">Hỗ trợ 24/7</h6>
+                    <p class="small mb-0 text-muted">Hotline: 1800 1234</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-circle bg-primary mb-2">
+                        <i class="fas fa-shield-alt text-white"></i>
+                    </div>
+                    <h6 class="mb-1">Bảo mật tuyệt đối</h6>
+                    <p class="small mb-0 text-muted">SSL 256-bit</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(document).ready(function() {
+            // Form validation
+            var form = document.getElementById('checkoutForm');
+            var termsCheckbox = document.getElementById('terms');
+
+            form.addEventListener('submit', function(event) {
+                // Validate main form
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                // Validate terms checkbox
+                if (!termsCheckbox.checked) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    termsCheckbox.classList.add('is-invalid');
+                } else {
+                    termsCheckbox.classList.remove('is-invalid');
+                }
+
+                form.classList.add('was-validated');
+            });
+
+            // Terms checkbox validation
+            termsCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    this.classList.remove('is-invalid');
+                }
+            });
+
+            // Auto-complete district based on city
+            $('#city').change(function() {
+                var city = $(this).val();
+                var districtInput = $('#district');
+
+                if (city === 'HCM') {
+                    districtInput.attr('placeholder', 'VD: Quận 1, Quận 3, Bình Thạnh...');
+                } else if (city === 'HN') {
+                    districtInput.attr('placeholder', 'VD: Hoàn Kiếm, Ba Đình, Cầu Giấy...');
+                } else {
+                    districtInput.attr('placeholder', 'Nhập quận/huyện');
+                }
+            });
+
+            // Load user info if available
+            function loadUserInfo() {
+                // This would typically come from an AJAX call or server-side model
+                // For demonstration, check if fields are empty
+                if ($('#FullName').val() === '' && $('#Email').val() === '') {
+                    // Try to load from localStorage or cookies
+                    var savedName = localStorage.getItem('checkout_fullName');
+                    var savedEmail = localStorage.getItem('checkout_email');
+                    var savedPhone = localStorage.getItem('checkout_phone');
+                    var savedAddress = localStorage.getItem('checkout_address');
+
+                    if (savedName) $('#FullName').val(savedName);
+                    if (savedEmail) $('#Email').val(savedEmail);
+                    if (savedPhone) $('#Phone').val(savedPhone);
+                    if (savedAddress) $('#ShippingAddress').val(savedAddress);
+                }
+            }
+
+            // Save form data on change (for user convenience)
+            $('#FullName, #Email, #Phone, #ShippingAddress').on('blur', function() {
+                localStorage.setItem('checkout_' + this.id, $(this).val());
+            });
+
+            loadUserInfo();
+        });
+    </script>
+}

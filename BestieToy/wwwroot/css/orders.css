@@ -1,0 +1,207 @@
+﻿/* Status Badges - using div instead of span */
+.status-badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+}
+
+    .status-badge.warning {
+        background-color: #ffc107;
+        color: #212529;
+    }
+
+    .status-badge.primary {
+        background: linear-gradient(135deg, #FF6B35 0%, #4ECDC4 100%);
+        color: white;
+    }
+
+    .status-badge.info {
+        background-color: #0dcaf0;
+        color: white;
+    }
+
+    .status-badge.success {
+        background-color: #198754;
+        color: white;
+    }
+
+    .status-badge.danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .status-badge.secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .status-badge.unknown {
+        background-color: #e9ecef;
+        color: #6c757d;
+    }
+
+/* Product Count */
+.product-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(13, 202, 240, 0.1);
+    color: #0a58ca;
+    border-radius: 50rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Quantity Badge */
+.quantity-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Product Image Placeholder */
+.image-placeholder {
+    border: 1px dashed #dee2e6;
+    color: #6c757d;
+}
+
+/* Order Timeline */
+.order-timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+    .order-timeline::before {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #dee2e6;
+    }
+
+.timeline-step {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+    .timeline-step:last-child {
+        margin-bottom: 0;
+    }
+
+.timeline-step-icon {
+    position: absolute;
+    left: -50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+}
+
+.timeline-step.completed .timeline-step-icon {
+    background: linear-gradient(135deg, #FF6B35 0%, #4ECDC4 100%);
+}
+
+.timeline-step.pending .timeline-step-icon {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+
+.timeline-step-content {
+    padding-left: 20px;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+}
+
+    .status-badge.warning {
+        background-color: #ffc107;
+        color: #212529;
+    }
+
+    .status-badge.primary {
+        background: linear-gradient(135deg, #FF6B35 0%, #4ECDC4 100%);
+        color: white;
+    }
+
+    .status-badge.info {
+        background-color: #0dcaf0;
+        color: white;
+    }
+
+    .status-badge.success {
+        background-color: #198754;
+        color: white;
+    }
+
+    .status-badge.danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .status-badge.secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .status-badge.unknown {
+        background-color: #e9ecef;
+        color: #6c757d;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .order-timeline {
+        padding-left: 40px;
+    }
+
+    .timeline-step-icon {
+        left: -40px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+
+    .timeline-step-content {
+        padding-left: 15px;
+    }
+
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
